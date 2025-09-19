@@ -1,0 +1,6 @@
+FinanceDataReader>=0.9.73
+pykrx>=1.0.45
+ta>=0.10.2
+investpy>=1.0.8
+pandas>=1.5
+numpy>=1.23
