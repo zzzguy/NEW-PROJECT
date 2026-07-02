@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모의면접 코치</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">✨ AI 없이도 바로 연습하는 면접 루틴</span>
+          <h1>웹에서 직무별 모의면접을 연습하고 답변 피드백을 받아보세요.</h1>
+          <p>질문 선택, 답변 작성, 점수화된 체크리스트, 최근 답변 히스토리까지 한 화면에서 제공합니다.</p>
+        </div>
+        <div class="hero-card">
+          <span class="hero-icon">🧠</span>
+          <strong id="hero-score">0점</strong>
+          <span>현재 답변 완성도</span>
+        </div>
+      </section>
+
+      <section class="control-panel">
+        <label>💼 직무
+          <select id="role-select">
+            <option value="frontend">프론트엔드 개발자</option>
+            <option value="backend">백엔드 개발자</option>
+            <option value="product">프로덕트 매니저</option>
+          </select>
+        </label>
+        <label>⭐ 난이도
+          <select id="level-select">
+            <option value="junior">주니어</option>
+            <option value="mid">미드레벨</option>
+            <option value="senior">시니어</option>
+          </select>
+        </label>
+        <div class="timer" id="timer">🕒 권장 답변 시간: 2분</div>
+      </section>
+
+      <section class="interview-grid">
+        <article class="question-card">
+          <div class="card-title">🎙️ 면접 질문</div>
+          <h2 id="question-text"></h2>
+          <div class="tips" id="tips"></div>
+          <button class="secondary" id="next-question">↻ 다음 질문</button>
+        </article>
+
+        <article class="answer-card">
+          <div class="card-title">📨 내 답변</div>
+          <textarea id="answer" placeholder="여기에 답변을 작성해 보세요. 예: 상황 → 내가 맡은 역할 → 실행한 행동 → 측정 가능한 결과 → 배운 점"></textarea>
+          <div class="actions">
+            <span id="char-count">0자</span>
+            <button id="save-answer">답변 저장</button>
+          </div>
+        </article>
+
+        <article class="feedback-card">
+          <div class="card-title">🧠 실시간 피드백</div>
+          <div class="score-bar"><span id="score-fill"></span></div>
+          <strong id="score-label">0 / 100</strong>
+          <ul id="feedback-list"></ul>
+        </article>
+
+        <article class="history-card">
+          <div class="card-title">🕒 최근 연습 기록</div>
+          <div id="history"><p class="empty">아직 저장된 답변이 없습니다.</p></div>
+        </article>
+      </section>
+    </main>
+    <script src="src/app.js"></script>
+  </body>
+</html>
